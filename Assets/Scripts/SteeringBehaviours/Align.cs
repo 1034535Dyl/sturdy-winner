@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Align : MonoBehaviour
+public class Align : SteeringBehaviour_Base
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 

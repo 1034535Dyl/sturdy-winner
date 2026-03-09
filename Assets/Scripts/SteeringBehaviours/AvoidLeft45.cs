@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Avoid : MonoBehaviour
+public class AvoidLeft45 : SteeringBehaviour_Base
 {
    [SerializeField]
    private float maxDistance = 3f;
@@ -16,7 +16,9 @@ public class Avoid : MonoBehaviour
    {
       RaycastHit hitInfo;
       bool       didItHitAnything;
-      didItHitAnything = Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance);
+      // 45 degree angle to the left
+      Vector3 rayDirection = Quaternion.Euler(0, -50, 0) * transform.forward;
+      didItHitAnything = Physics.Raycast(transform.position, rayDirection, out hitInfo, maxDistance);
 
 
       if (didItHitAnything)
@@ -27,7 +29,7 @@ public class Avoid : MonoBehaviour
       }
       else
       {
-         Debug.DrawLine(transform.position, transform.position + transform.forward * maxDistance, Color.green);
+         Debug.DrawLine(transform.position, transform.position + rayDirection * maxDistance, Color.green);
       }
    }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour
+public class MoveForward : SteeringBehaviour_Base
 {
    [SerializeField]
    private Rigidbody rb;

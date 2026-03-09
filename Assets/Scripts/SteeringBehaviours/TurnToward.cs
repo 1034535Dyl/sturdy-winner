@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TurnToward : MonoBehaviour
+public class TurnToward : SteeringBehaviour_Base
 {
     public Transform target;
     public Rigidbody rb;
